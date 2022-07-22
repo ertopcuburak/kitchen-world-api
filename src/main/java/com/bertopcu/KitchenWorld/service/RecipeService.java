@@ -27,6 +27,14 @@ public class RecipeService {
 
     public void saveRecipe(Recipe recipe) {
         recipeRepository.save(recipe);
+        recipeRepository.flush();
+        int recipeId = recipe.getId();
+        //System.out.println("::saveRecipe - recipeId:: "+recipeId);
+        for(RecipeMaterial rm : recipe.getMaterialList()) {
+            //System.out.println("::saveRecipe - materialList item:: "+rm.getMaterialName());
+            rm.setRecipeId(recipeId);
+            recipeMaterialRepository.save(rm);
+        }
     }
 
     public Recipe getRecipe(Integer id) {
@@ -36,6 +44,11 @@ public class RecipeService {
     }
 
     public void deleteRecipe(Integer id) {
+        Recipe recipe = recipeRepository.findById(id).get();
+        recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+        for(RecipeMaterial rm : recipe.getMaterialList()) {
+            recipeMaterialRepository.deleteById(rm.getId());
+        }
         recipeRepository.deleteById(id);
     }
 

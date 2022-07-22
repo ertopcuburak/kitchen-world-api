@@ -9,6 +9,7 @@ public class RecipeMaterial {
     private int recipeId;
     private int materialId;
     private String quantity;
+    @Column(insertable=false, updatable=false)
     private String materialName;
 
     public RecipeMaterial() {}
@@ -62,6 +63,7 @@ public class RecipeMaterial {
         this.quantity = quantity;
     }
 
+    @Column(insertable=false, updatable=false)
     public String getMaterialName() {
         return materialName;
     }

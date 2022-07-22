@@ -2,6 +2,7 @@ package com.bertopcu.KitchenWorld.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "recipe")
@@ -11,6 +12,9 @@ public class Recipe {
     private String description;
     private String howToMake;
     private int userId;
+
+    @Transient
+    private transient List<RecipeMaterial> materialList;
 
     @Basic
     @Temporal(TemporalType.TIMESTAMP)
@@ -72,6 +76,15 @@ public class Recipe {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    @Transient
+    public List<RecipeMaterial> getMaterialList() {
+        return materialList;
+    }
+
+    public void setMaterialList(List<RecipeMaterial> materialList) {
+        this.materialList = materialList;
     }
 
     public Date getCreatedDate() {

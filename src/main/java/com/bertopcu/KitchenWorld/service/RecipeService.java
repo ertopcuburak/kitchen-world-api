@@ -18,7 +18,11 @@ public class RecipeService {
     @Autowired
     private RecipeMaterialRepository recipeMaterialRepository;
     public List<Recipe> listAllRecipes() {
-        return recipeRepository.findAll();
+        List<Recipe> recipeList = recipeRepository.findAll();
+        for(Recipe recipe : recipeList) {
+            recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+        }
+        return recipeList;
     }
 
     public void saveRecipe(Recipe recipe) {

@@ -16,11 +16,13 @@ public class RecipeController {
     @Autowired
     RecipeService recipeService;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("")
     public List<Recipe> list() {
         return recipeService.listAllRecipes();
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/{id}")
     public ResponseEntity<Recipe> get(@PathVariable Integer id) {
         try {
@@ -30,10 +32,12 @@ public class RecipeController {
             return new ResponseEntity<Recipe>(HttpStatus.NOT_FOUND);
         }
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/")
     public void add(@RequestBody Recipe recipe) {
         recipeService.saveRecipe(recipe);
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Recipe recipe, @PathVariable Integer id) {
         try {
@@ -45,6 +49,7 @@ public class RecipeController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
 

@@ -12,6 +12,7 @@ public class Recipe {
     private String description;
     private String howToMake;
     private int userId;
+    private String imageUrl;
 
     @Transient
     private transient List<RecipeMaterial> materialList;
@@ -26,12 +27,13 @@ public class Recipe {
 
     public Recipe() {}
 
-    public Recipe(int id, String name, String description, String howToMake, int userId, Date createdDate, Date updatedDate) {
+    public Recipe(int id, String name, String description, String howToMake, int userId, String imageUrl, Date createdDate, Date updatedDate) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.howToMake = howToMake;
         this.userId = userId;
+        this.imageUrl = imageUrl;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
     }
@@ -76,6 +78,14 @@ public class Recipe {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     @Transient

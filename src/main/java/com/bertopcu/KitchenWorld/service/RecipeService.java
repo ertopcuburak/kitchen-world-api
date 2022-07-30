@@ -56,4 +56,12 @@ public class RecipeService {
         List<RecipeMaterial> recipeMaterialList = (List<RecipeMaterial>) recipeMaterialRepository.findByRecipeId(recipeId);
         return recipeMaterialList;
     }
+
+    public List<Recipe> getRecipesByCategory(int categoryId) {
+        List<Recipe> recipeList = recipeRepository.findByCategoryId(categoryId);
+        for(Recipe recipe : recipeList) {
+            recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+        }
+        return recipeList;
+    }
 }

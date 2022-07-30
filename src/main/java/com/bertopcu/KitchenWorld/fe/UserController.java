@@ -16,11 +16,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("")
     public List<User> list() {
         return userService.listAllUser();
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/{id}")
     public ResponseEntity<User> get(@PathVariable Integer id) {
         try {
@@ -30,10 +32,12 @@ public class UserController {
             return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
         }
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/")
     public void add(@RequestBody User user) {
         userService.saveUser(user);
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody User user, @PathVariable Integer id) {
         try {
@@ -45,6 +49,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
 

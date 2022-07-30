@@ -55,4 +55,10 @@ public class RecipeController {
 
         recipeService.deleteRecipe(id);
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/categorized/{categoryId}")
+    public List<Recipe> listByCategory(@PathVariable Integer categoryId) {
+        return recipeService.getRecipesByCategory(categoryId);
+    }
 }

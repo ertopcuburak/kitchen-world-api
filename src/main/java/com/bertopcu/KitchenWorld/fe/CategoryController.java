@@ -1,7 +1,7 @@
 package com.bertopcu.KitchenWorld.fe;
 
-import com.bertopcu.KitchenWorld.model.Material;
-import com.bertopcu.KitchenWorld.service.MaterialService;
+import com.bertopcu.KitchenWorld.model.Category;
+import com.bertopcu.KitchenWorld.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,48 +11,51 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/materials")
-public class MaterialController {
+@RequestMapping("/categories")
+public class CategoryController {
     @Autowired
-    MaterialService materialService;
+    CategoryService categoryService;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("")
-    public List<Material> list() {
-        return materialService.listAllMaterials();
+    public List<Category> list() {
+        return categoryService.listAllCategories();
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/{id}")
-    public ResponseEntity<Material> get(@PathVariable Integer id) {
+    public ResponseEntity<Category> get(@PathVariable Integer id) {
         try {
-            Material material = materialService.getMaterial(id);
-            return new ResponseEntity<Material>(material, HttpStatus.OK);
+            Category category = categoryService.getCategory(id);
+            return new ResponseEntity<Category>(category, HttpStatus.OK);
         } catch (NoSuchElementException e) {
-            return new ResponseEntity<Material>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Category>(HttpStatus.NOT_FOUND);
         }
     }
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/")
-    public void add(@RequestBody Material material) {
-        materialService.saveMaterial(material);
+    public void add(@RequestBody Category category) {
+        categoryService.saveCategory(category);
     }
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Material material, @PathVariable Integer id) {
+    public ResponseEntity<?> update(@RequestBody Category category, @PathVariable Integer id) {
         try {
-            Material existMaterial = materialService.getMaterial(id);
-            material.setId(id);
-            materialService.saveMaterial(material);
+            Category existCategory = categoryService.getCategory(id);
+            category.setId(id);
+            categoryService.saveCategory(category);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-
-        materialService.deleteMaterial(id);
+        categoryService.deleteCategory(id);
     }
+
 }

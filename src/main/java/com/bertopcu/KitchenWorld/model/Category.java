@@ -9,6 +9,7 @@ public class Category {
     private int id;
     private String name;
     private String description;
+    private String imageUrl;
 
     @Basic
     @Temporal(TemporalType.TIMESTAMP)
@@ -21,10 +22,11 @@ public class Category {
     public Category() {
     }
 
-    public Category(int id, String name, String description, Date createdDate, Date updatedDate) {
+    public Category(int id, String name, String description, String imageUrl, Date createdDate, Date updatedDate) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.imageUrl = imageUrl;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
     }
@@ -53,6 +55,14 @@ public class Category {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Date getCreatedDate() {

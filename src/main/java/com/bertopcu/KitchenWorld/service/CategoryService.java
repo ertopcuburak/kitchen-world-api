@@ -4,6 +4,7 @@ import com.bertopcu.KitchenWorld.jpa_repo.CategoryRepository;
 import com.bertopcu.KitchenWorld.model.Category;
 import com.bertopcu.KitchenWorld.model.Material;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,7 +16,7 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
     public List<Category> listAllCategories() {
-        return categoryRepository.findAll();
+        return categoryRepository.findAll(Sort.by(Sort.Direction.ASC, "orderVal"));
     }
 
     public void saveCategory(Category category) {

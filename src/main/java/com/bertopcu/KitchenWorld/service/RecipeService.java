@@ -5,6 +5,7 @@ import com.bertopcu.KitchenWorld.jpa_repo.RecipeRepository;
 import com.bertopcu.KitchenWorld.model.Recipe;
 import com.bertopcu.KitchenWorld.model.RecipeMaterial;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -18,7 +19,7 @@ public class RecipeService {
     @Autowired
     private RecipeMaterialRepository recipeMaterialRepository;
     public List<Recipe> listAllRecipes() {
-        List<Recipe> recipeList = recipeRepository.findAll();
+        List<Recipe> recipeList = recipeRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
         }

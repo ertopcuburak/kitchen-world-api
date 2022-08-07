@@ -3,6 +3,7 @@ package com.bertopcu.KitchenWorld.service;
 import com.bertopcu.KitchenWorld.jpa_repo.MaterialRepository;
 import com.bertopcu.KitchenWorld.model.Material;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,7 +15,7 @@ public class MaterialService {
     @Autowired
     private MaterialRepository materialRepository;
     public List<Material> listAllMaterials() {
-        return materialRepository.findAll();
+        return materialRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
     public void saveMaterial(Material material) {

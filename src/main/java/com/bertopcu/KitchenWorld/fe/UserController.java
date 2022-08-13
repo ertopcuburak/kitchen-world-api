@@ -1,5 +1,6 @@
 package com.bertopcu.KitchenWorld.fe;
 
+import com.bertopcu.KitchenWorld.model.Login;
 import com.bertopcu.KitchenWorld.model.User;
 import com.bertopcu.KitchenWorld.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,22 @@ public class UserController {
     public void delete(@PathVariable Integer id) {
 
         userService.deleteUser(id);
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/login")
+    public ResponseEntity<User> login(@RequestBody Login credentials) {
+        try {
+            User user = userService.loginViaEmail(credentials.getIdentifier(), credentials.getPwd());
+            if (user == null) {
+                user = userService.loginViaUserName(credentials.getIdentifier(), credentials.getPwd());
+                if (user == null) {
+                    return new ResponseEntity<User>(user, HttpStatus.NOT_FOUND);
+                }
+            }
+            return new ResponseEntity<User>(user, HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        }
     }
 }

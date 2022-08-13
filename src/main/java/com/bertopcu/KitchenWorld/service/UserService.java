@@ -27,4 +27,12 @@ public class UserService {
     public void deleteUser(Integer id) {
         userRepository.deleteById(id);
     }
+
+    public User loginViaEmail(String email, String pwd) {
+        return userRepository.findByEmailAndPwd(email, pwd);
+    }
+
+    public User loginViaUserName(String userName, String pwd) {
+        return userRepository.findByUnameAndPwd(userName, pwd);
+    }
 }

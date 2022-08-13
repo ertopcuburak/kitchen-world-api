@@ -6,6 +6,8 @@ import com.bertopcu.KitchenWorld.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +18,9 @@ import java.util.NoSuchElementException;
 public class UserController {
     @Autowired
     UserService userService;
+
+    @Autowired
+    public InMemoryUserDetailsManager inMemoryUserDetailsManager;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("")
@@ -34,9 +39,16 @@ public class UserController {
         }
     }
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping("/")
+    @PostMapping("/signup")
     public void add(@RequestBody User user) {
         userService.saveUser(user);
+        String role = user.getType() == 1 ? "ADMIN" : "USER";
+        UserDetails ud = org.springframework.security.core.userdetails.User
+                .withUsername(user.getuName())
+                .password("{noop}"+user.getPwd())
+                .roles(role)
+                .build();
+        inMemoryUserDetailsManager.createUser(ud);
     }
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PutMapping("/{id}")

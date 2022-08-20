@@ -61,4 +61,10 @@ public class RecipeController {
     public List<Recipe> listByCategory(@PathVariable Integer categoryId) {
         return recipeService.getRecipesByCategory(categoryId);
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/searchByName/{name}")
+    public List<Recipe> listByName(@PathVariable String name) {
+        return recipeService.getRecipesByName(name);
+    }
 }

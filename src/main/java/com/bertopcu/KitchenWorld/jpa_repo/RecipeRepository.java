@@ -9,4 +9,7 @@ import java.util.List;
 public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
     @Query(value = "SELECT * FROM recipe WHERE category_id = ?1 ORDER BY id DESC", nativeQuery = true)
     List<Recipe> findByCategoryId(Integer categoryId);
+
+    @Query(value = "SELECT * FROM recipe WHERE name LIKE %?1% ORDER BY id DESC", nativeQuery = true)
+    List<Recipe> findByRecipeName(String recipeName);
 }

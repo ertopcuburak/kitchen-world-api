@@ -65,4 +65,12 @@ public class RecipeService {
         }
         return recipeList;
     }
+
+    public List<Recipe> getRecipesByName(String recipeName) {
+        List<Recipe> recipeList = recipeRepository.findByRecipeName(recipeName);
+        for(Recipe recipe : recipeList) {
+            recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+        }
+        return recipeList;
+    }
 }

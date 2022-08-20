@@ -7,7 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -63,8 +65,16 @@ public class RecipeController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/searchByName/{name}")
-    public List<Recipe> listByName(@PathVariable String name) {
+    @GetMapping("/searchByName")
+    public List<Recipe> listByName(@RequestBody Map<String, String> searchTextMap) {
+        String name = searchTextMap.get("searchText");
         return recipeService.getRecipesByName(name);
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/searchByMaterials")
+    public List<Recipe> listByMaterials(@RequestBody Map<String, ArrayList<Integer>> materials) {
+        ArrayList<Integer> materialIds = materials.get("materials");
+        return recipeService.getRecipesByMaterials(materialIds);
     }
 }

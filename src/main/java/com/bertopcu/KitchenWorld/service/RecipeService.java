@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -68,6 +69,14 @@ public class RecipeService {
 
     public List<Recipe> getRecipesByName(String recipeName) {
         List<Recipe> recipeList = recipeRepository.findByRecipeName(recipeName);
+        for(Recipe recipe : recipeList) {
+            recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+        }
+        return recipeList;
+    }
+
+    public List<Recipe> getRecipesByMaterials(ArrayList<Integer> materialIds) {
+        List<Recipe> recipeList = recipeRepository.findByMaterials(materialIds);
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
         }

@@ -65,14 +65,14 @@ public class RecipeController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/searchByName")
+    @PostMapping("/searchByName")
     public List<Recipe> listByName(@RequestBody Map<String, String> searchTextMap) {
         String name = searchTextMap.get("searchText");
         return recipeService.getRecipesByName(name);
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/searchByMaterials")
+    @PostMapping("/searchByMaterials")
     public List<Recipe> listByMaterials(@RequestBody Map<String, ArrayList<Integer>> materials) {
         ArrayList<Integer> materialIds = materials.get("materials");
         return recipeService.getRecipesByMaterials(materialIds);

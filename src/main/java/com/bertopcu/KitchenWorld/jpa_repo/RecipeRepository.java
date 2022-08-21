@@ -14,6 +14,6 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
     @Query(value = "SELECT * FROM recipe WHERE name LIKE %?1% ORDER BY id DESC", nativeQuery = true)
     List<Recipe> findByRecipeName(String recipeName);
 
-    @Query(value = "SELECT recipe.* FROM recipe INNER JOIN recipe_material ON recipe_material.recipe_id = recipe.id LEFT JOIN material ON recipe_material.material_id = material.id WHERE material.id IN (?1) ORDER BY recipe.id DESC", nativeQuery = true)
+    @Query(value = "SELECT DISTINCT recipe.* FROM recipe INNER JOIN recipe_material ON recipe_material.recipe_id = recipe.id LEFT JOIN material ON recipe_material.material_id = material.id WHERE material.id IN (?1) GROUP BY recipe.id ORDER BY COUNT(*) DESC", nativeQuery = true)
     List<Recipe> findByMaterials(ArrayList<Integer> materialIds);
 }

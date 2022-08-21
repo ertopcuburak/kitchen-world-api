@@ -11,6 +11,8 @@ public class RecipeMaterial {
     private String quantity;
     @Column(insertable=false, updatable=false)
     private String materialName;
+    @Column(insertable=false, updatable=false)
+    private int isBanned;
 
     public RecipeMaterial() {}
 
@@ -21,12 +23,13 @@ public class RecipeMaterial {
         this.quantity = quantity;
     }
 
-    public RecipeMaterial(int id, int recipeId, int materialId, String quantity, String materialName) {
+    public RecipeMaterial(int id, int recipeId, int materialId, String quantity, String materialName, int isBanned) {
         this.id = id;
         this.recipeId = recipeId;
         this.materialId = materialId;
         this.quantity = quantity;
         this.materialName = materialName;
+        this.isBanned = isBanned;
     }
 
     @Id
@@ -70,5 +73,14 @@ public class RecipeMaterial {
 
     public void setMaterialName(String materialName) {
         this.materialName = materialName;
+    }
+
+    @Column(insertable=false, updatable=false)
+    public int getIsBanned() {
+        return isBanned;
+    }
+
+    public void setIsBanned(int isBanned) {
+        this.isBanned = isBanned;
     }
 }

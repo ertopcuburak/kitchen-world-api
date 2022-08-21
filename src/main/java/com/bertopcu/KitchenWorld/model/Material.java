@@ -9,6 +9,7 @@ public class Material {
     private int id;
     private String name;
     private String description;
+    private int isBanned;
 
     @Basic
     @Temporal(TemporalType.TIMESTAMP)
@@ -24,10 +25,11 @@ public class Material {
 
     }
 
-    public Material(int id, String name, String description, Date createdDate, Date updatedDate, String updatedBy) {
+    public Material(int id, String name, String description, int isBanned, Date createdDate, Date updatedDate, String updatedBy) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.isBanned = isBanned;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
         this.updatedBy = updatedBy;
@@ -57,6 +59,14 @@ public class Material {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getIsBanned() {
+        return isBanned;
+    }
+
+    public void setIsBanned(int isBanned) {
+        this.isBanned = isBanned;
     }
 
     public Date getCreatedDate() {

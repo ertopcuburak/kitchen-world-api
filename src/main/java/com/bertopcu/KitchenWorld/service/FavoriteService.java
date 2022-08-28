@@ -29,4 +29,8 @@ public class FavoriteService {
     public void deleteFavorite(Integer id) {
         favoriteRepository.deleteById(id);
     }
+
+    public List<Favorite> listAllFavsByUserId(Integer userId) {
+        return favoriteRepository.getAllFavsByUserId(userId);
+    }
 }

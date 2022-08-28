@@ -82,4 +82,12 @@ public class RecipeService {
         }
         return recipeList;
     }
+
+    public List<Recipe> getFavoriteRecipes(Integer userId) {
+        List<Recipe> recipeList = recipeRepository.getFavRecipes(userId);
+        for(Recipe recipe : recipeList) {
+            recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+        }
+        return recipeList;
+    }
 }

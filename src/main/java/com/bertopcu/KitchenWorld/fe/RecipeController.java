@@ -77,4 +77,11 @@ public class RecipeController {
         ArrayList<Integer> materialIds = materials.get("materials");
         return recipeService.getRecipesByMaterials(materialIds);
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/getFavorites")
+    public List<Recipe> getFavorites(@RequestBody Map<String, Integer> body) {
+        Integer userId = body.get("userId");
+        return recipeService.getFavoriteRecipes(userId);
+    }
 }

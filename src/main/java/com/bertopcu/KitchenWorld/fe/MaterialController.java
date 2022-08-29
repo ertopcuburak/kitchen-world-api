@@ -17,13 +17,13 @@ public class MaterialController {
     MaterialService materialService;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("")
+    @PostMapping("/all")
     public List<Material> list() {
         return materialService.listAllMaterials();
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<Material> get(@PathVariable Integer id) {
         try {
             Material material = materialService.getMaterial(id);

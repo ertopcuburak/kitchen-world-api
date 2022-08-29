@@ -17,13 +17,13 @@ public class CategoryController {
     CategoryService categoryService;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("")
+    @PostMapping("/all")
     public List<Category> list() {
         return categoryService.listAllCategories();
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<Category> get(@PathVariable Integer id) {
         try {
             Category category = categoryService.getCategory(id);

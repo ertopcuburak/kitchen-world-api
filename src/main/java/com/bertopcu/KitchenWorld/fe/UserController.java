@@ -23,13 +23,13 @@ public class UserController {
     public InMemoryUserDetailsManager inMemoryUserDetailsManager;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("")
+    @PostMapping("/all")
     public List<User> list() {
         return userService.listAllUser();
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<User> get(@PathVariable Integer id) {
         try {
             User user = userService.getUser(id);

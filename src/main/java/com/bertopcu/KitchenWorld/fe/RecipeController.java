@@ -19,13 +19,13 @@ public class RecipeController {
     RecipeService recipeService;
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("")
+    @PostMapping("/all")
     public List<Recipe> list() {
         return recipeService.listAllRecipes();
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<Recipe> get(@PathVariable Integer id) {
         try {
             Recipe recipe = recipeService.getRecipe(id);
@@ -59,7 +59,7 @@ public class RecipeController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/categorized/{categoryId}")
+    @PostMapping("/categorized/{categoryId}")
     public List<Recipe> listByCategory(@PathVariable Integer categoryId) {
         return recipeService.getRecipesByCategory(categoryId);
     }

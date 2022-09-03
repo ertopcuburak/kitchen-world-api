@@ -1,5 +1,7 @@
 package com.bertopcu.KitchenWorld.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +10,7 @@ public class User {
     private int id;
     private String uName;
     private String email;
+    @JsonIgnore
     private String pwd;
     private int type;
     private String firstName;
@@ -39,6 +42,7 @@ public class User {
         this.updatedDate = updatedDate;
         this.updatedBy = updatedBy;
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {

@@ -2,13 +2,16 @@ package com.bertopcu.KitchenWorld.service;
 
 import com.bertopcu.KitchenWorld.jpa_repo.RecipeMaterialRepository;
 import com.bertopcu.KitchenWorld.jpa_repo.RecipeRepository;
+import com.bertopcu.KitchenWorld.jpa_repo.UserRepository;
 import com.bertopcu.KitchenWorld.model.Recipe;
 import com.bertopcu.KitchenWorld.model.RecipeMaterial;
+import com.bertopcu.KitchenWorld.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +22,13 @@ public class RecipeService {
     private RecipeRepository recipeRepository;
     @Autowired
     private RecipeMaterialRepository recipeMaterialRepository;
+    @Autowired
+    private UserRepository userRepository;
     public List<Recipe> listAllRecipes() {
         List<Recipe> recipeList = recipeRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+            recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
         }
         return recipeList;
     }
@@ -42,6 +48,7 @@ public class RecipeService {
     public Recipe getRecipe(Integer id) {
         Recipe recipe = recipeRepository.findById(id).get();
         recipe.setMaterialList(this.getRecipeMaterials(id));
+        recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
         return recipe;
     }
 
@@ -63,6 +70,7 @@ public class RecipeService {
         List<Recipe> recipeList = recipeRepository.findByCategoryId(categoryId);
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+            recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
         }
         return recipeList;
     }
@@ -71,6 +79,7 @@ public class RecipeService {
         List<Recipe> recipeList = recipeRepository.findByRecipeName(recipeName);
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+            recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
         }
         return recipeList;
     }
@@ -79,6 +88,7 @@ public class RecipeService {
         List<Recipe> recipeList = recipeRepository.findByMaterials(materialIds);
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+            recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
         }
         return recipeList;
     }
@@ -87,7 +97,14 @@ public class RecipeService {
         List<Recipe> recipeList = recipeRepository.getFavRecipes(userId);
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
+            recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
         }
         return recipeList;
+    }
+
+    public User getRecipeOwner(Integer userId) {
+        User recipeOwner = userRepository.findById(userId).get();
+        //recipeOwner.setPwd("***");
+        return recipeOwner;
     }
 }

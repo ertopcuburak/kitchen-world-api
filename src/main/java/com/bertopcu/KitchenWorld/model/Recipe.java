@@ -18,6 +18,9 @@ public class Recipe {
     @Transient
     private transient List<RecipeMaterial> materialList;
 
+    @Transient
+    private transient User recipeOwner;
+
     @Basic
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date createdDate;
@@ -105,6 +108,15 @@ public class Recipe {
 
     public void setMaterialList(List<RecipeMaterial> materialList) {
         this.materialList = materialList;
+    }
+
+    @Transient
+    public User getRecipeOwner() {
+        return recipeOwner;
+    }
+
+    public void setRecipeOwner(User recipeOwner) {
+        this.recipeOwner = recipeOwner;
     }
 
     public Date getCreatedDate() {

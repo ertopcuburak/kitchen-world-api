@@ -104,7 +104,6 @@ public class RecipeService {
 
     public User getRecipeOwner(Integer userId) {
         User recipeOwner = userRepository.findById(userId).get();
-        //recipeOwner.setPwd("***");
         return recipeOwner;
     }
 }

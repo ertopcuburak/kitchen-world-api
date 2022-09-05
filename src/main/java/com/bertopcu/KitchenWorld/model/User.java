@@ -10,7 +10,6 @@ public class User {
     private int id;
     private String uName;
     private String email;
-    @JsonIgnore
     private String pwd;
     private int type;
     private String firstName;
@@ -69,6 +68,7 @@ public class User {
         this.email = email;
     }
 
+    @JsonIgnore
     public String getPwd() {
         return pwd;
     }

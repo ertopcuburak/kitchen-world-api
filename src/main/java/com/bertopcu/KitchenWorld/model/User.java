@@ -1,6 +1,7 @@
 package com.bertopcu.KitchenWorld.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ public class User {
     private int id;
     private String uName;
     private String email;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String pwd;
     private int type;
     private String firstName;
@@ -68,7 +70,6 @@ public class User {
         this.email = email;
     }
 
-    @JsonIgnore
     public String getPwd() {
         return pwd;
     }

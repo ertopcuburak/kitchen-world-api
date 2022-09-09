@@ -1,5 +1,9 @@
 package com.bertopcu.KitchenWorld.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Formula;
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -14,6 +18,8 @@ public class Recipe {
     private int userId;
     private String imageUrl;
     private int categoryId;
+    @Transient
+    private Integer favCount;
 
     @Transient
     private transient List<RecipeMaterial> materialList;
@@ -99,6 +105,15 @@ public class Recipe {
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public Integer getFavCount() {
+        return favCount;
+    }
+
+    @Transient
+    public void setFavCount(Integer favCount) {
+        this.favCount = favCount;
     }
 
     @Transient

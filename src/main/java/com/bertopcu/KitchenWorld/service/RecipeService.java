@@ -46,14 +46,14 @@ public class RecipeService {
     }
 
     public Recipe getRecipe(Integer id) {
-        Recipe recipe = recipeRepository.findById(id).get();
+        Recipe recipe = recipeRepository.findByRecipeId(id);
         recipe.setMaterialList(this.getRecipeMaterials(id));
         recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
         return recipe;
     }
 
     public void deleteRecipe(Integer id) {
-        Recipe recipe = recipeRepository.findById(id).get();
+        Recipe recipe = recipeRepository.findByRecipeId(id);
         recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
         for(RecipeMaterial rm : recipe.getMaterialList()) {
             recipeMaterialRepository.deleteById(rm.getId());

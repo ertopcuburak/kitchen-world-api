@@ -34,4 +34,12 @@ public class FavoriteController {
         Integer userId = body.get("userId");
         return favoriteService.listAllFavsByUserId(userId);
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/deleteFav")
+    public void deleteFavByUserAndRecipe(@RequestBody Map<String, Integer> body) {
+        Integer userId = body.get("userId");
+        Integer recipeId = body.get("recipeId");
+        this.favoriteService.deleteFavByUserAndRecipe(userId, recipeId);
+    }
 }

@@ -33,4 +33,8 @@ public class FavoriteService {
     public List<Favorite> listAllFavsByUserId(Integer userId) {
         return favoriteRepository.getAllFavsByUserId(userId);
     }
+
+    public void deleteFavByUserAndRecipe(Integer userId, Integer recipeId) {
+        favoriteRepository.deleteByUserAndRecipe(userId, recipeId);
+    }
 }

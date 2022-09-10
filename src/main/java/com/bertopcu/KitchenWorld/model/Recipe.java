@@ -107,11 +107,11 @@ public class Recipe {
         this.categoryId = categoryId;
     }
 
+    @Transient
     public Integer getFavCount() {
         return favCount;
     }
 
-    @Transient
     public void setFavCount(Integer favCount) {
         this.favCount = favCount;
     }

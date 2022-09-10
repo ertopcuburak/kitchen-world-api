@@ -1,5 +1,6 @@
 package com.bertopcu.KitchenWorld.service;
 
+import com.bertopcu.KitchenWorld.jpa_repo.FavoriteRepository;
 import com.bertopcu.KitchenWorld.jpa_repo.RecipeMaterialRepository;
 import com.bertopcu.KitchenWorld.jpa_repo.RecipeRepository;
 import com.bertopcu.KitchenWorld.jpa_repo.UserRepository;
@@ -24,11 +25,14 @@ public class RecipeService {
     private RecipeMaterialRepository recipeMaterialRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private FavoriteRepository favoriteRepository;
     public List<Recipe> listAllRecipes() {
         List<Recipe> recipeList = recipeRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
+            recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
         }
         return recipeList;
     }
@@ -46,14 +50,15 @@ public class RecipeService {
     }
 
     public Recipe getRecipe(Integer id) {
-        Recipe recipe = recipeRepository.findByRecipeId(id);
+        Recipe recipe = recipeRepository.findById(id).get();
         recipe.setMaterialList(this.getRecipeMaterials(id));
         recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
+        recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
         return recipe;
     }
 
     public void deleteRecipe(Integer id) {
-        Recipe recipe = recipeRepository.findByRecipeId(id);
+        Recipe recipe = recipeRepository.findById(id).get();
         recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
         for(RecipeMaterial rm : recipe.getMaterialList()) {
             recipeMaterialRepository.deleteById(rm.getId());
@@ -71,6 +76,7 @@ public class RecipeService {
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
+            recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
         }
         return recipeList;
     }
@@ -80,6 +86,7 @@ public class RecipeService {
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
+            recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
         }
         return recipeList;
     }
@@ -89,6 +96,7 @@ public class RecipeService {
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
+            recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
         }
         return recipeList;
     }
@@ -98,6 +106,7 @@ public class RecipeService {
         for(Recipe recipe : recipeList) {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
+            recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
         }
         return recipeList;
     }

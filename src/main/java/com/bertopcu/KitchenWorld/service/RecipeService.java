@@ -63,6 +63,7 @@ public class RecipeService {
         for(RecipeMaterial rm : recipe.getMaterialList()) {
             recipeMaterialRepository.deleteById(rm.getId());
         }
+        recipeRepository.deleteRecipeFavs(id);
         recipeRepository.deleteById(id);
     }
 

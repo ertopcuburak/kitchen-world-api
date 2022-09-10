@@ -2,6 +2,7 @@ package com.bertopcu.KitchenWorld.jpa_repo;
 
 import com.bertopcu.KitchenWorld.model.Recipe;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.ArrayList;
@@ -19,5 +20,9 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
 
     @Query(value = "SELECT recipe.* FROM recipe INNER JOIN favorite ON favorite.recipe_id = recipe.id WHERE favorite.user_id = ?1 ORDER BY favorite.fav_date DESC", nativeQuery = true)
     List<Recipe> getFavRecipes(Integer userId);
+
+    @Modifying
+    @Query(value = "DELETE FROM favorite WHERE recipe_id = ?1", nativeQuery = true)
+    void deleteRecipeFavs(Integer recipeId);
 
 }

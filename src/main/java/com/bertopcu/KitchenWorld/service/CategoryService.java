@@ -28,7 +28,7 @@ public class CategoryService {
     public void saveCategory(Category category) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
-        logger.debug("::saveCategory starts:: ::loggedinUser:: {}", currentPrincipalName);
+        logger.debug("::saveCategory starts:: ::loggedinUser:: {} ::categoryName:: {}", currentPrincipalName, category.getName());
         try {
             categoryRepository.save(category);
             logger.debug("::saveCategory success:: {}", category.getName());

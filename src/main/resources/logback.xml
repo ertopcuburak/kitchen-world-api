@@ -5,6 +5,7 @@
     <property name="RECIPE_SERVICE_LOG" value="logs/recipe-service.log"/>
     <property name="CATEGORY_SERVICE_LOG" value="logs/category-service.log"/>
     <property name="MATERIAL_SERVICE_LOG" value="logs/material-service.log"/>
+    <property name="FAV_SERVICE_LOG" value="logs/fav-service.log"/>
 
     <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${HOME_LOG}</file>
@@ -82,6 +83,25 @@
         </encoder>
     </appender>
 
+    <appender name="FAV-SERVICE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${FAV_SERVICE_LOG}</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/fav-service.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each archived file, size max 10MB -->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- total size of all archive files, if total size > 20GB,
+				it will delete old archived file -->
+            <totalSizeCap>20GB</totalSizeCap>
+            <!-- 60 days to keep -->
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %p %c{1.} [%t] %m%n</pattern>
+        </encoder>
+    </appender>
+
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
@@ -100,6 +120,10 @@
 
     <logger name="com.bertopcu.KitchenWorld.service.MaterialService" level="debug" additivity="false">
         <appender-ref ref="MATERIAL-SERVICE"/>
+    </logger>
+
+    <logger name="com.bertopcu.KitchenWorld.service.FavoriteService" level="debug" additivity="false">
+        <appender-ref ref="FAV-SERVICE"/>
     </logger>
 
     <root level="info">

@@ -27,7 +27,7 @@ public class FavoriteService {
     public void saveFavorite(Favorite favorite) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
-        logger.debug("::saveFavorite starts:: ::loggedinUser:: {} ::param:: {}", currentPrincipalName, favorite.getRecipeId());
+        logger.debug("::saveFavorite starts:: ::loggedinUser:: {} ::recipeId:: {}", currentPrincipalName, favorite.getRecipeId());
         try {
             favoriteRepository.save(favorite);
             logger.debug("::saveFavorite success for:: {}", favorite.getRecipeId());

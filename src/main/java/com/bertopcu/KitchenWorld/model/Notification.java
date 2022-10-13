@@ -12,7 +12,7 @@ public class Notification {
     int objectId;
     String message;
     int isRead;
-    int triggerUser;
+    Integer triggerUser;
     int originSystem;
 
     @Basic
@@ -25,7 +25,7 @@ public class Notification {
     public Notification() {
     }
 
-    public Notification(int id, int userId, String type, int objectId, String message, int isRead, int triggerUser, int originSystem, Date createdTime) {
+    public Notification(int id, int userId, String type, int objectId, String message, int isRead, Integer triggerUser, int originSystem, Date createdTime) {
         this.id = id;
         this.userId = userId;
         this.type = type;
@@ -87,11 +87,11 @@ public class Notification {
         this.isRead = isRead;
     }
 
-    public int getTriggerUser() {
+    public Integer getTriggerUser() {
         return triggerUser;
     }
 
-    public void setTriggerUser(int triggerUser) {
+    public void setTriggerUser(Integer triggerUser) {
         this.triggerUser = triggerUser;
     }
 

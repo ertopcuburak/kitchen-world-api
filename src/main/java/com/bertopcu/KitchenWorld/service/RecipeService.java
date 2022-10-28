@@ -157,4 +157,8 @@ public class RecipeService {
         User recipeOwner = userRepository.findById(userId).get();
         return recipeOwner;
     }
+
+    public void updateRecipeImg(String imgUrl,Integer id) {
+        recipeRepository.updateRecipeImg(imgUrl, id);
+    }
 }

@@ -25,4 +25,8 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
     @Query(value = "DELETE FROM favorite WHERE recipe_id = ?1", nativeQuery = true)
     void deleteRecipeFavs(Integer recipeId);
 
+    @Modifying
+    @Query(value = "UPDATE recipe SET image_url = ?1 WHERE id = ?2", nativeQuery = true)
+    void updateRecipeImg(String imgUrl, Integer recipeId);
+
 }

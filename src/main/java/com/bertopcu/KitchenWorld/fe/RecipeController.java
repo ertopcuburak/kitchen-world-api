@@ -3,6 +3,9 @@ package com.bertopcu.KitchenWorld.fe;
 import com.bertopcu.KitchenWorld.model.Recipe;
 import com.bertopcu.KitchenWorld.service.RecipeService;
 import com.bertopcu.KitchenWorld.util.FileUploadUtil;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import net.bytebuddy.description.ModifierReviewable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -40,16 +44,18 @@ public class RecipeController {
     }
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/")
-    public void add(@RequestBody Recipe recipe) {
-        recipeService.saveRecipe(recipe);
+    public void add(@RequestParam("recipe") String recipeStr, @RequestParam("image") MultipartFile multipartFile) {
+        Gson g = new GsonBuilder().excludeFieldsWithModifiers(Modifier.VOLATILE).create();
+        Recipe recipe = g.fromJson(recipeStr, Recipe.class);
+        recipeService.saveRecipe(recipe, multipartFile);
     }
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody Recipe recipe, @PathVariable Integer id) {
+    public ResponseEntity<?> update(@RequestBody Recipe recipe, @PathVariable Integer id, @RequestParam("image") MultipartFile multipartFile) {
         try {
             Recipe existRecipe = recipeService.getRecipe(id);
             recipe.setId(id);
-            recipeService.saveRecipe(recipe);
+            recipeService.saveRecipe(recipe, multipartFile);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -97,7 +103,7 @@ public class RecipeController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } else {
             String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-            String uploadDir = "src/main/resources/public/images/recipe-photos/" + recipe.getId();
+            String uploadDir = "public/images/recipe-photos/" + recipe.getId();
 
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
             String dbDir = "/public/images/recipe-photos/" + recipe.getId() + "/" + fileName;

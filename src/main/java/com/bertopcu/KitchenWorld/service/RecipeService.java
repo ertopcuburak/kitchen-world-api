@@ -5,15 +5,22 @@ import com.bertopcu.KitchenWorld.model.Category;
 import com.bertopcu.KitchenWorld.model.Recipe;
 import com.bertopcu.KitchenWorld.model.RecipeMaterial;
 import com.bertopcu.KitchenWorld.model.User;
+import com.bertopcu.KitchenWorld.util.FileUploadUtil;
+import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.io.IOException;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +50,8 @@ public class RecipeService {
         return recipeList;
     }
 
-    public void saveRecipe(Recipe recipe) {
+    public void saveRecipe(Recipe recipe, MultipartFile image) {
+        logger.debug(new Gson().toJson(recipe));
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
         logger.debug("::saveRecipe starts:: {} ::loggedinUser:: {}", recipe.getName(), currentPrincipalName);
@@ -57,10 +65,22 @@ public class RecipeService {
                 rm.setRecipeId(recipeId);
                 recipeMaterialRepository.save(rm);
             }
+            if(image != null && image.getOriginalFilename() != null) {
+                String fileName = StringUtils.cleanPath(image.getOriginalFilename());
+                String uploadDir = "public/images/recipe-photos/" + recipe.getId();
+
+                FileUploadUtil.saveFile(uploadDir, fileName, image);
+                String dbDir = "/"+ uploadDir + "/" + fileName;
+                this.updateRecipeImg(dbDir, recipe.getId());
+            }
             logger.debug("::saveRecipe:: {}", recipe.getName());
-        } catch(Exception e) {
+        } catch(Exception e ) {
             logger.error("::error at saveRecipe::", e);
-            throw e;
+            try {
+                throw e;
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 

@@ -1,9 +1,0 @@
-<service>
-    <id>KWService</id>
-    <name>KW API Service</name>
-    <description>Kitchen World Backend Service</description>
-    <env name="KWService_HOME" value="%BASE%"/>
-    <executable>java</executable>
-    <arguments>-Xmx1024m -jar "%BASE%\target\KitchenWorld-0.0.1-SNAPSHOT.jar"</arguments>
-    <logmode>rotate</logmode>
-</service>

@@ -27,6 +27,9 @@ public class Recipe {
     @Transient
     private transient User recipeOwner;
 
+    @Transient
+    private transient String categoryName;
+
     @Basic
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date createdDate;
@@ -132,6 +135,15 @@ public class Recipe {
 
     public void setRecipeOwner(User recipeOwner) {
         this.recipeOwner = recipeOwner;
+    }
+
+    @Transient
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public Date getCreatedDate() {

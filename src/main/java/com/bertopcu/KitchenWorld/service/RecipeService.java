@@ -46,6 +46,7 @@ public class RecipeService {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
             recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
+            recipe.setCategoryName(this.getRecipeCategoryName(recipe.getCategoryId()));
         }
         return recipeList;
     }
@@ -94,6 +95,7 @@ public class RecipeService {
             recipe.setMaterialList(this.getRecipeMaterials(id));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
             recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
+            recipe.setCategoryName(this.getRecipeCategoryName(recipe.getCategoryId()));
             logger.debug("::getRecipe for:: {}", recipe.getName());
         } catch(Exception e) {
             logger.error("::error at getRecipe::", e);
@@ -126,6 +128,7 @@ public class RecipeService {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
             recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
+            recipe.setCategoryName(this.getRecipeCategoryName(recipe.getCategoryId()));
         }
         Category selectedCategory = categoryRepository.findById(categoryId).get();
         logger.debug("::getRecipesByCategory:: {} ::total size:: {}", selectedCategory.getName(), recipeList.size());
@@ -138,6 +141,7 @@ public class RecipeService {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
             recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
+            recipe.setCategoryName(this.getRecipeCategoryName(recipe.getCategoryId()));
         }
         return recipeList;
     }
@@ -153,6 +157,7 @@ public class RecipeService {
                 recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
                 recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
                 recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
+                recipe.setCategoryName(this.getRecipeCategoryName(recipe.getCategoryId()));
             }
             logger.debug("::getRecipesByMaterials resultSize:: {} ", recipeList.size());
         } catch(Exception e) {
@@ -169,6 +174,7 @@ public class RecipeService {
             recipe.setMaterialList(this.getRecipeMaterials(recipe.getId()));
             recipe.setRecipeOwner(this.getRecipeOwner(recipe.getUserId()));
             recipe.setFavCount(this.favoriteRepository.getFavCountForRecipe(recipe.getId()));
+            recipe.setCategoryName(this.getRecipeCategoryName(recipe.getCategoryId()));
         }
         return recipeList;
     }
@@ -176,6 +182,11 @@ public class RecipeService {
     public User getRecipeOwner(Integer userId) {
         User recipeOwner = userRepository.findById(userId).get();
         return recipeOwner;
+    }
+
+    public String getRecipeCategoryName(Integer categoryId) {
+        String categoryName = recipeRepository.getRecipeCategoryName(categoryId);
+        return categoryName;
     }
 
     public void updateRecipeImg(String imgUrl,Integer id) {

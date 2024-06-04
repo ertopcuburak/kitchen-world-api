@@ -1,0 +1,106 @@
+2022-10-06 00:03:16 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory starts:: ::param(s):: 9 ::loggedinUser:: sinem
+2022-10-06 00:03:16 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory:: Balık Yemekleri ::total size:: 15
+2022-10-06 00:04:26 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory starts:: ::param(s):: 9 ::loggedinUser:: sinem
+2022-10-06 00:04:26 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory:: Balık Yemekleri ::total size:: 15
+2022-10-06 00:05:11 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory starts:: ::param(s):: 9 ::loggedinUser:: sinem
+2022-10-06 00:05:12 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory:: Balık Yemekleri ::total size:: 15
+2022-10-06 00:06:34 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory starts:: ::param(s):: 2 ::loggedinUser:: sinem
+2022-10-06 00:06:34 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory:: Et Yemekleri ::total size:: 13
+2022-10-06 00:07:07 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 11 ::loggedinUser:: sinem
+2022-10-06 00:07:07 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Makarna & Pilav ::total size:: 8
+2022-10-06 00:08:08 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 8 ::loggedinUser:: sinem
+2022-10-06 00:08:09 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Hamur İşleri ::total size:: 18
+2022-10-06 00:09:00 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 9 ::loggedinUser:: sinem
+2022-10-06 00:09:00 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Balık Yemekleri ::total size:: 15
+2022-10-06 00:14:07 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 1 ::loggedinUser:: sinem
+2022-10-06 00:14:07 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Çorbalar ::total size:: 19
+2022-10-06 00:14:25 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory starts:: ::param(s):: 8 ::loggedinUser:: sinem
+2022-10-06 00:14:25 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory:: Hamur İşleri ::total size:: 18
+2022-10-06 00:15:20 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 8 ::loggedinUser:: sinem
+2022-10-06 00:15:20 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Hamur İşleri ::total size:: 18
+2022-10-06 00:15:59 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory starts:: ::param(s):: 9 ::loggedinUser:: sinem
+2022-10-06 00:15:59 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory:: Balık Yemekleri ::total size:: 15
+2022-10-06 00:16:23 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 12 ::loggedinUser:: sinem
+2022-10-06 00:16:23 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Diyet Yemekleri ::total size:: 6
+2022-10-06 00:17:01 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 18 ::loggedinUser:: sinem
+2022-10-06 00:17:01 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Kahvaltı ::total size:: 15
+2022-10-06 00:21:54 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory starts:: ::param(s):: 5 ::loggedinUser:: sinem
+2022-10-06 00:21:54 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory:: Dünya Mutfağı ::total size:: 5
+2022-10-06 00:22:07 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory starts:: ::param(s):: 16 ::loggedinUser:: sinem
+2022-10-06 00:22:07 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory:: Tavuk Yemekleri ::total size:: 8
+2022-10-06 00:23:10 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory starts:: ::param(s):: 2 ::loggedinUser:: sinem
+2022-10-06 00:23:10 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory:: Et Yemekleri ::total size:: 13
+2022-10-06 00:23:36 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory starts:: ::param(s):: 18 ::loggedinUser:: ahmet
+2022-10-06 00:23:36 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory:: Kahvaltı ::total size:: 15
+2022-10-06 00:23:53 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-7] ::getRecipesByCategory starts:: ::param(s):: 15 ::loggedinUser:: ahmet
+2022-10-06 00:23:53 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-7] ::getRecipesByCategory:: Bakliyat ::total size:: 15
+2022-10-06 00:24:19 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory starts:: ::param(s):: 18 ::loggedinUser:: ahmet
+2022-10-06 00:24:19 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory:: Kahvaltı ::total size:: 15
+2022-10-06 00:26:23 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 33 ::loggedinUser:: ahmet
+2022-10-06 00:26:23 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Ekmek ::total size:: 9
+2022-10-06 00:28:29 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-7] ::getRecipesByCategory starts:: ::param(s):: 9 ::loggedinUser:: ahmet
+2022-10-06 00:28:29 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-7] ::getRecipesByCategory:: Balık Yemekleri ::total size:: 15
+2022-10-06 00:29:54 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 9 ::loggedinUser:: ahmet
+2022-10-06 00:29:54 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Balık Yemekleri ::total size:: 15
+2022-10-06 00:29:58 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory starts:: ::param(s):: 11 ::loggedinUser:: ahmet
+2022-10-06 00:29:58 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory:: Makarna & Pilav ::total size:: 8
+2022-10-06 00:30:23 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory starts:: ::param(s):: 11 ::loggedinUser:: ahmet
+2022-10-06 00:30:23 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory:: Makarna & Pilav ::total size:: 8
+2022-10-06 00:30:27 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory starts:: ::param(s):: 11 ::loggedinUser:: ahmet
+2022-10-06 00:30:27 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory:: Makarna & Pilav ::total size:: 8
+2022-10-06 00:30:55 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 30 ::loggedinUser:: ahmet
+2022-10-06 00:30:55 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Dondurma ::total size:: 10
+2022-10-06 00:36:01 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory starts:: ::param(s):: 2 ::loggedinUser:: sinem
+2022-10-06 00:36:01 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory:: Et Yemekleri ::total size:: 13
+2022-10-06 00:43:51 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 31 ::loggedinUser:: sinem
+2022-10-06 00:43:51 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Turşu ::total size:: 11
+2022-10-06 00:44:16 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-8] ::getRecipesByCategory starts:: ::param(s):: 33 ::loggedinUser:: sinem
+2022-10-06 00:44:16 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-8] ::getRecipesByCategory:: Ekmek ::total size:: 9
+2022-10-06 00:44:24 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-7] ::getRecipesByCategory starts:: ::param(s):: 20 ::loggedinUser:: sinem
+2022-10-06 00:44:24 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-7] ::getRecipesByCategory:: Hamburger ::total size:: 8
+2022-10-06 00:44:43 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory starts:: ::param(s):: 27 ::loggedinUser:: sinem
+2022-10-06 00:44:43 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory:: Sulu Yemekler ::total size:: 10
+2022-10-06 00:44:50 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 30 ::loggedinUser:: sinem
+2022-10-06 00:44:50 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Dondurma ::total size:: 10
+2022-10-06 00:45:03 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 29 ::loggedinUser:: sinem
+2022-10-06 00:45:03 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Kurabiye ::total size:: 12
+2022-10-06 00:45:51 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 16 ::loggedinUser:: sinem
+2022-10-06 00:45:51 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Tavuk Yemekleri ::total size:: 8
+2022-10-06 00:45:55 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory starts:: ::param(s):: 3 ::loggedinUser:: sinem
+2022-10-06 00:45:55 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::getRecipesByCategory:: Sebze Yemekleri ::total size:: 17
+2022-10-06 00:46:11 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory starts:: ::param(s):: 7 ::loggedinUser:: sinem
+2022-10-06 00:46:11 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory:: İçecekler ::total size:: 17
+2022-10-06 00:46:43 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 8 ::loggedinUser:: sinem
+2022-10-06 00:46:43 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Hamur İşleri ::total size:: 18
+2022-10-06 00:47:26 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory starts:: ::param(s):: 11 ::loggedinUser:: sinem
+2022-10-06 00:47:26 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory:: Makarna & Pilav ::total size:: 8
+2022-10-06 00:49:51 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory starts:: ::param(s):: 7 ::loggedinUser:: sinem
+2022-10-06 00:49:51 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory:: İçecekler ::total size:: 17
+2022-10-06 01:10:36 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory starts:: ::param(s):: 1 ::loggedinUser:: sinem
+2022-10-06 01:10:36 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-1] ::getRecipesByCategory:: Çorbalar ::total size:: 19
+2022-10-06 01:11:22 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory starts:: ::param(s):: 1 ::loggedinUser:: sinem
+2022-10-06 01:11:22 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory:: Çorbalar ::total size:: 19
+2022-10-06 01:12:20 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory starts:: ::param(s):: 6 ::loggedinUser:: sinem
+2022-10-06 01:12:20 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-3] ::getRecipesByCategory:: Salatalar ::total size:: 9
+2022-10-06 01:12:50 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-8] ::getRecipesByCategory starts:: ::param(s):: 18 ::loggedinUser:: sinem
+2022-10-06 01:12:50 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-8] ::getRecipesByCategory:: Kahvaltı ::total size:: 15
+2022-10-06 01:13:42 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory starts:: ::param(s):: 24 ::loggedinUser:: sinem
+2022-10-06 01:13:42 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory:: Mezeler ::total size:: 10
+2022-10-06 01:13:59 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory starts:: ::param(s):: 11 ::loggedinUser:: sinem
+2022-10-06 01:13:59 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory:: Makarna & Pilav ::total size:: 8
+2022-10-06 01:17:34 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-8] ::getRecipesByCategory starts:: ::param(s):: 21 ::loggedinUser:: sinem
+2022-10-06 01:17:34 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-8] ::getRecipesByCategory:: Reçel ::total size:: 12
+2022-10-06 01:23:53 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory starts:: ::param(s):: 16 ::loggedinUser:: sinem
+2022-10-06 01:23:53 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::getRecipesByCategory:: Tavuk Yemekleri ::total size:: 8
+2022-10-06 01:24:00 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory starts:: ::param(s):: 14 ::loggedinUser:: sinem
+2022-10-06 01:24:00 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-5] ::getRecipesByCategory:: Yöresel Yemekler ::total size:: 19
+2022-10-06 01:24:37 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory starts:: ::param(s):: 30 ::loggedinUser:: sinem
+2022-10-06 01:24:37 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-10] ::getRecipesByCategory:: Dondurma ::total size:: 10
+2022-10-06 01:25:05 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 20 ::loggedinUser:: sinem
+2022-10-06 01:25:05 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Hamburger ::total size:: 8
+2022-10-06 01:38:19 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 1 ::loggedinUser:: sinem
+2022-10-06 01:38:19 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Çorbalar ::total size:: 19
+2022-10-06 01:41:03 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory starts:: ::param(s):: 17 ::loggedinUser:: sinem
+2022-10-06 01:41:03 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-9] ::getRecipesByCategory:: Atıştırmalık ::total size:: 9
+2022-10-06 01:41:15 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory starts:: ::param(s):: 30 ::loggedinUser:: sinem
+2022-10-06 01:41:15 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::getRecipesByCategory:: Dondurma ::total size:: 10

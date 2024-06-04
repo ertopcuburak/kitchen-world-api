@@ -1,0 +1,2 @@
+2022-10-29 02:38:53 DEBUG com.bertopcu.KitchenWorld.service.FavoriteService [http-nio-8090-exec-4] ::saveFavorite starts:: ::loggedinUser:: bertopcu ::recipeId:: 9
+2022-10-29 02:38:53 DEBUG com.bertopcu.KitchenWorld.service.FavoriteService [http-nio-8090-exec-4] ::saveFavorite success for:: 9

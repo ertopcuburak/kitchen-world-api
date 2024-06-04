@@ -1,0 +1,4 @@
+2022-10-10 00:12:16 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8080-exec-3] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: kırmızı etli biber
+2022-10-10 00:12:16 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8080-exec-3] ::saveMaterial success:: kırmızı etli biber
+2022-10-10 00:12:17 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8080-exec-7] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: dolmalık yeşil biber
+2022-10-10 00:12:17 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8080-exec-7] ::saveMaterial success:: dolmalık yeşil biber

@@ -1,0 +1,16 @@
+2022-10-30 00:00:23 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-7] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: tekila
+2022-10-30 00:00:23 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-7] ::saveMaterial success:: tekila
+2022-10-30 00:04:10 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-9] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: nane likörü
+2022-10-30 00:04:10 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-9] ::saveMaterial success:: nane likörü
+2022-10-30 00:07:26 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-6] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: tonik
+2022-10-30 00:07:26 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-6] ::saveMaterial success:: tonik
+2022-10-30 00:12:16 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-2] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: taze misket limonu suyu
+2022-10-30 00:12:16 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-2] ::saveMaterial success:: taze misket limonu suyu
+2022-10-30 00:20:44 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-5] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: sarı rom
+2022-10-30 00:20:44 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-5] ::saveMaterial success:: sarı rom
+2022-10-30 00:21:14 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-10] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: misket limonu kabuğu
+2022-10-30 00:21:14 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-10] ::saveMaterial success:: misket limonu kabuğu
+2022-10-30 00:29:28 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-3] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: kokoreç
+2022-10-30 00:29:28 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-3] ::saveMaterial success:: kokoreç
+2022-10-30 00:29:30 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-9] ::saveMaterial starts:: ::loggedinUser:: bertopcu ::paramName:: acı kırmızı pul biber
+2022-10-30 00:29:30 DEBUG com.bertopcu.KitchenWorld.service.MaterialService [http-nio-8090-exec-9] ::saveMaterial success:: acı kırmızı pul biber

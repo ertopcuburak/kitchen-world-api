@@ -1,0 +1,4 @@
+2022-10-05 23:18:32 DEBUG com.bertopcu.KitchenWorld.service.FavoriteService [http-nio-8080-exec-9] ::deleteFavByUserAndRecipe starts:: ::loggedinUser:: sinem ::param-recipe:: 60
+2022-10-05 23:18:32 DEBUG com.bertopcu.KitchenWorld.service.FavoriteService [http-nio-8080-exec-9] ::deleteFavByUserAndRecipe success for:: 60
+2022-10-05 23:19:09 DEBUG com.bertopcu.KitchenWorld.service.FavoriteService [http-nio-8080-exec-8] ::saveFavorite starts:: ::loggedinUser:: sinem ::param:: 2419
+2022-10-05 23:19:09 DEBUG com.bertopcu.KitchenWorld.service.FavoriteService [http-nio-8080-exec-8] ::saveFavorite success for:: 2419

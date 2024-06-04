@@ -1,0 +1,4 @@
+2022-10-04 23:56:58,777 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::RECIPES BY CATEGORY:: 
+2022-10-04 23:57:48,871 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-4] ::RECIPES BY CATEGORY:: 
+2022-10-04 23:57:57,737 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-6] ::RECIPES BY CATEGORY:: 
+2022-10-04 23:58:46,694 DEBUG com.bertopcu.KitchenWorld.service.RecipeService [http-nio-8080-exec-2] ::RECIPES BY CATEGORY::
